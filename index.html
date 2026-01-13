@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Special Dawat 2026 - Paid Members</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f4ec;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #b22222;
+    }
+
+    .info {
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    ul {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      list-style: none;
+    }
+
+    li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Special Dawat 2026</h1>
+  <h2>Paid Members List</h2>
+
+  <div class="info">
+    <p><strong>Entry Fee:</strong> ₹150</p>
+    <p><strong>Total Members:</strong> <span id="totalMembers">0</span></p>
+    <p><strong>Total Collection:</strong> ₹<span id="totalAmount">0</span></p>
+  </div>
+
+  <!-- 👇 ADD NAMES HERE -->
+  <ul id="memberList">
+    <li>Ahmed Ali</li>
+    <li>Rahim Khan</li>
+    <li>Fatima Begum</li>
+    <li>Ayesha Noor</li>
+  </ul>
+
+  <div class="footer">
+    © 2026 Special Dawat
+  </div>
+
+  <script>
+    const fee = 150;
+    const members = document.querySelectorAll("#memberList li").length;
+
+    document.getElementById("totalMembers").innerText = members;
+    document.getElementById("totalAmount").innerText = members * fee;
+  </script>
+
+</body>
+</html>
