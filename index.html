@@ -2,39 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Special Dawat 2026 - Paid Members</title>
+  <title>Special Dawat 2026 - Payment Page</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f4ec;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #8b0000, #ffcc70);
+      margin: 0;
       padding: 20px;
-      max-width: 600px;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 700px;
       margin: auto;
+      background: #ffffff;
+      color: #333;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    h1, h2 {
+    header {
+      background: #b22222;
+      padding: 20px;
       text-align: center;
-      color: #b22222;
+      color: #fff;
     }
 
-    .info {
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .info-box {
       background: #fff3cd;
+      border-left: 6px solid #ff9800;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .countdown {
       text-align: center;
-      font-size: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #b22222;
+      margin: 20px 0;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 10px;
+      width: 30%;
+      font-weight: bold;
     }
 
     ul {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
       list-style: none;
+      padding: 0;
+      margin: 0;
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     li {
-      padding: 8px;
+      padding: 10px 15px;
       border-bottom: 1px solid #ddd;
     }
 
@@ -42,42 +93,119 @@
       border-bottom: none;
     }
 
-    .footer {
+    .upi-section {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
+    }
+
+    .upi-section img {
+      width: 220px;
+      border-radius: 10px;
+      margin-top: 10px;
+      border: 2px solid #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background: #f1f1f1;
       color: #555;
     }
   </style>
 </head>
 <body>
 
-  <h1>Special Dawat 2026</h1>
-  <h2>Paid Members List</h2>
+  <div class="container">
 
-  <div class="info">
-    <p><strong>Entry Fee:</strong> ₹150</p>
-    <p><strong>Total Members:</strong> <span id="totalMembers">0</span></p>
-    <p><strong>Total Collection:</strong> ₹<span id="totalAmount">0</span></p>
-  </div>
+    <header>
+      <h1>Special Dawat 2026</h1>
+      <p>Season 6</p>
+      <p><strong>Date:</strong> 17 January 2026 (Saturday)</p>
+      <p><strong>Venue:</strong> DAAG</p>
+    </header>
 
-  <!-- 👇 ADD NAMES HERE -->
-  <ul id="memberList">
-    <li>Ahmed Ali</li>
-    <li>Rahim Khan</li>
-    <li>Fatima Begum</li>
-    <li>Ayesha Noor</li>
-  </ul>
+    <div class="section">
 
-  <div class="footer">
-    © 2026 Special Dawat
+      <div class="info-box">
+        <strong>Entry Fee:</strong> ₹150 per person  
+        <br>Pay online using UPI or pay at the venue.
+      </div>
+
+      <div class="countdown" id="countdown">
+        Loading countdown...
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          Members  
+          <div id="totalMembers">0</div>
+        </div>
+        <div class="stat">
+          Fee  
+          <div>₹150</div>
+        </div>
+        <div class="stat">
+          Total  
+          <div>₹<span id="totalAmount">0</span></div>
+        </div>
+      </div>
+
+      <h3>✅ Paid Members</h3>
+
+      <!-- ADD NAMES HERE -->
+      <ul id="memberList">
+        <li>Ahmed Ali</li>
+        <li>Rahim Khan</li>
+        <li>Fatima Begum</li>
+        <li>Ayesha Noor</li>
+      </ul>
+
+      <div class="upi-section">
+        <h3>Pay Online (UPI)</h3>
+        <p><strong>UPI ID:</strong> yourupi@bank</p>
+        <p>Scan the QR code to pay</p>
+
+        <!-- Replace this with your own QR image -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=yourupi@bank&pn=SpecialDawat&am=150" alt="UPI QR Code">
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 Special Dawat | All Rights Reserved
+    </footer>
+
   </div>
 
   <script>
+    // Calculate members & total
     const fee = 150;
     const members = document.querySelectorAll("#memberList li").length;
-
     document.getElementById("totalMembers").innerText = members;
     document.getElementById("totalAmount").innerText = members * fee;
+
+    // Countdown Timer
+    const eventDate = new Date("January 17, 2026 18:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "🎉 Event Started!";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").innerText =
+        `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left to pay`;
+    }, 1000);
   </script>
 
 </body>
