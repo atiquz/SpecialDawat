@@ -5,8 +5,8 @@
 
 <title id="pageTitle"></title>
 
-<meta property="og:title" content="Special Dawat 2026 Chunari Season 1 Pay and join the event">
-<meta property="og:description" content="Join us for Season 6 of Special Dawat Chunari on 20 January 2026 at DAAG.">
+<meta property="og:title" id="ogTitle">
+<meta property="og:description" id="ogDesc">
 
 <meta property="og:image" content="https://images.weserv.nl/?url=rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg&w=1200&q=85&output=jpg">
 <meta property="og:image:width" content="1200">
@@ -260,6 +260,9 @@ upiName:"SpecialDawat",
 
 bannerImage:"https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg"
 
+ogTitle:"Special Dawat Chunari 2026 Pay and join the event",
+ogDescription:"Join us for Special Dawat Chunari on 20 January 2026 at DAAG."
+
 };
 
 /* =========================
@@ -267,6 +270,10 @@ APPLY VARIABLES
 ========================= */
 
 document.title = CONFIG.eventName + " – Payment & Members";
+
+document.getElementById("ogTitle").setAttribute("content", CONFIG.ogTitle);
+
+document.getElementById("ogDesc").setAttribute("content", CONFIG.ogDescription);
 
 document.getElementById("eventName").innerText = CONFIG.eventName;
 
