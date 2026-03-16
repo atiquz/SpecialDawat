@@ -19,6 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ORIGINAL STYLES — UNCHANGED */
 body {
 margin:0;
 font-family:'Poppins',sans-serif;
@@ -177,11 +178,11 @@ color:#555;
 <div class="container">
 
 <header>
-<h1 id="eventName">Special Dawat Chunari 2026</h1>
-<p id="seasonText">Season 1</p>
-<p id="dateText"><strong>📅 Date:</strong> 20 January 2026 (Tuesday)</p>
+<h1 id="eventName"></h1>
+<p id="seasonText"></p>
+<p id="dateText"></p>
 <p><strong>📍 Venue:</strong> 
-<a id="venueLink" href="#" target="_blank" style="color:white;text-decoration:underline;">DAAG</a>
+<a id="venueLink" target="_blank" style="color:white;text-decoration:underline;"></a>
 </p>
 </header>
 
@@ -189,10 +190,7 @@ color:#555;
 
 <div class="section">
 
-<div class="highlight" id="feeText">
-<strong>Entry Fee:</strong> ₹200 per person  
-<br>Pay online via UPI or pay at the venue.
-</div>
+<div class="highlight" id="feeText"></div>
 
 <div class="countdown-box" id="countdown">
 Loading countdown...
@@ -206,7 +204,7 @@ Members
 
 <div class="stat">
 Fee
-<div id="feeStat">₹200</div>
+<div id="feeStat"></div>
 </div>
 
 <div class="stat">
@@ -222,25 +220,20 @@ Total
 </ul>
 
 <div class="upi-box">
-<p class="upi-id" id="upiID">6026557964@omni</p>
-<p id="upiText">Scan the QR code or pay ₹200 via UPI ID</p>
-
-<img id="upiQR" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=6026557964@omni&pn=SpecialDawat&am=200">
+<p class="upi-id" id="upiID"></p>
+<p id="upiText"></p>
+<img id="upiQR">
 </div>
 
 </div>
 
-<footer id="footerText">
-© 2026 Special Dawat | Designed for easy payments & tracking
-</footer>
+<footer id="footerText"></footer>
 
 </div>
 
 <script>
 
-/* =========================
-CONFIG — EDIT ONLY HERE
-========================= */
+/* CONFIG */
 
 const CONFIG = {
 
@@ -251,40 +244,36 @@ dateText:"19 March 2026 (Thursday)",
 countdownDate:"March 19, 2026 16:00:00",
 
 venue:"Bank of river Brahmaputra",
-mapsQuery:"https://www.google.com/maps/place/26.1853994, 90.6076284",
+mapsLink:"https://www.google.com/maps/place/26.1853994,90.6076284",
 
 fee:250,
 
 upi:"6026557964@omni",
 upiName:"Iftari Dawat",
 
-bannerImage:"https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg"
+bannerImage:"https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg",
 
-ogTitle:"Iftarti Dawat Pay and join the event",
+ogTitle:"Iftari Dawat – Pay and join the event",
 ogDescription:"Join us for Iftari Dawat on 19 March 2026 at the bank of river Brahmaputra."
 
 };
 
-/* =========================
-APPLY VARIABLES
-========================= */
+
+/* APPLY VARIABLES */
 
 document.title = CONFIG.eventName + " – Payment & Members";
 
-document.getElementById("ogTitle").setAttribute("content", CONFIG.ogTitle);
-
-document.getElementById("ogDesc").setAttribute("content", CONFIG.ogDescription);
+document.getElementById("ogTitle").setAttribute("content",CONFIG.ogTitle);
+document.getElementById("ogDesc").setAttribute("content",CONFIG.ogDescription);
 
 document.getElementById("eventName").innerText = CONFIG.eventName;
-
 document.getElementById("seasonText").innerText = CONFIG.season;
 
 document.getElementById("dateText").innerHTML =
 "<strong>📅 Date:</strong> " + CONFIG.dateText;
 
 document.getElementById("venueLink").innerText = CONFIG.venue;
-
-document.getElementById("venueLink").href = CONFIG.mapsQuery;
+document.getElementById("venueLink").href = CONFIG.mapsLink;
 
 document.getElementById("banner").style.background =
 "url('"+CONFIG.bannerImage+"') center/cover no-repeat";
@@ -301,39 +290,32 @@ document.getElementById("upiText").innerText =
 
 document.getElementById("upiQR").src =
 "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa="
-+CONFIG.upi+"&pn="+CONFIG.upiName+"&am="+CONFIG.fee;
++CONFIG.upi+"&pn="+encodeURIComponent(CONFIG.upiName)+"&am="+CONFIG.fee;
 
 document.getElementById("footerText").innerText =
 "© 2026 "+CONFIG.eventName+" | Designed for ATI Developers";
 
-/* =========================
-MEMBER COUNT
-========================= */
+
+/* MEMBER COUNT */
 
 const members = document.querySelectorAll("#memberList li").length;
-
 document.getElementById("totalMembers").innerText = members;
-
 document.getElementById("totalAmount").innerText = members * CONFIG.fee;
 
-/* =========================
-COUNTDOWN
-========================= */
+
+/* COUNTDOWN */
 
 const eventDate = new Date(CONFIG.countdownDate).getTime();
 
 const timer = setInterval(()=>{
 
 const now = new Date().getTime();
-
 const diff = eventDate - now;
 
 if(diff<=0){
 
 document.getElementById("countdown").innerText="🎉 Event Started!";
-
 clearInterval(timer);
-
 return;
 
 }
