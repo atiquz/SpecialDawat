@@ -1,271 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>IFTARI DAWAT</title>
+<meta charset="UTF-8">
+
+<title id="pageTitle"></title>
+
 <meta property="og:title" content="Special Dawat 2026 Chunari Season 1 Pay and join the event">
 <meta property="og:description" content="Join us for Season 6 of Special Dawat Chunari on 20 January 2026 at DAAG.">
-<!--<meta property="og:image" content="https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg">-->
 
 <meta property="og:image" content="https://images.weserv.nl/?url=rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg&w=1200&q=85&output=jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
 
-
 <meta property="og:url" content="https://yourwebsite.com/yourpage.html">
 <meta property="og:type" content="website">
 
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body {
+margin:0;
+font-family:'Poppins',sans-serif;
+background:radial-gradient(circle at top,#8b0000,#2b0000);
+color:#fff;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #8b0000, #2b0000);
-      color: #fff;
-    }
+.container {
+max-width:800px;
+margin:30px auto;
+background:#fff;
+color:#333;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
 
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: #fff;
-      color: #333;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    }
+header {
+background:linear-gradient(135deg,#b22222,#ff8c00);
+text-align:center;
+padding:30px 20px;
+color:#fff;
+}
 
-    header {
-      background: linear-gradient(135deg, #b22222, #ff8c00);
-      text-align: center;
-      padding: 30px 20px;
-      color: #fff;
-    }
+header h1 {
+font-family:'Poppins',sans-serif;
+font-size:40px;
+margin:0;
+letter-spacing:1px;
+}
 
-    header h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 40px;
-      margin: 0;
-      letter-spacing: 1px;
-    }
+header p {
+margin:6px 0;
+font-size:16px;
+opacity:0.95;
+}
 
-    header p {
-      margin: 6px 0;
-      font-size: 16px;
-      opacity: 0.95;
-    }
+.banner {
+width:100%;
+height:220px;
+background:url("https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg") center/cover no-repeat;
+}
 
-    .banner {
-      width: 100%;
-      height: 220px;
-      background: url("https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg") center/cover no-repeat;
-    }
+.section {
+padding:25px;
+}
 
-    .section {
-      padding: 25px;
-    }
+.highlight {
+background:linear-gradient(135deg,#fff3cd,#ffe0a3);
+border-left:6px solid #ff9800;
+padding:16px;
+border-radius:10px;
+font-size:16px;
+margin-bottom:25px;
+}
 
-    .highlight {
-      background: linear-gradient(135deg, #fff3cd, #ffe0a3);
-      border-left: 6px solid #ff9800;
-      padding: 16px;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-bottom: 25px;
-    }
+.countdown-box {
+background:#b22222;
+color:#fff;
+text-align:center;
+padding:18px;
+border-radius:12px;
+font-size:22px;
+font-weight:600;
+margin-bottom:25px;
+box-shadow:inset 0 0 10px rgba(0,0,0,0.3);
+}
 
-    .countdown-box {
-      background: #b22222;
-      color: #fff;
-      text-align: center;
-      padding: 18px;
-      border-radius: 12px;
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 25px;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-    }
+.stats {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:25px;
+}
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-bottom: 25px;
-    }
+.stat {
+background:#f9f9f9;
+padding:15px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+font-weight:600;
+}
 
-    .stat {
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      font-weight: 600;
-    }
+.stat div {
+font-size:22px;
+color:#b22222;
+margin-top:5px;
+}
 
-    .stat div {
-      font-size: 22px;
-      color: #b22222;
-      margin-top: 5px;
-    }
+h3 {
+margin-top:30px;
+color:#b22222;
+font-size:22px;
+text-align:center;
+}
 
-    h3 {
-      margin-top: 30px;
-      color: #b22222;
-      font-size: 22px;
-      text-align: center;
-    }
+ul {
+list-style:none;
+padding:0;
+margin:10px 0 0;
+background:#fafafa;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
-      background: #fafafa;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
+li {
+padding:12px 16px;
+border-bottom:1px solid #e0e0e0;
+font-weight:500;
+}
 
-    li {
-      padding: 12px 16px;
-      border-bottom: 1px solid #e0e0e0;
-      font-weight: 500;
-    }
+li:last-child {
+border-bottom:none;
+}
 
-    li:last-child {
-      border-bottom: none;
-    }
+.upi-box {
+background:#fff8ef;
+border-radius:14px;
+padding:20px;
+text-align:center;
+margin-top:30px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
 
-    .upi-box {
-      background: #fff8ef;
-      border-radius: 14px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
+.upi-box img {
+width:230px;
+border-radius:12px;
+margin-top:12px;
+border:2px solid #ddd;
+}
 
-    .upi-box img {
-      width: 230px;
-      border-radius: 12px;
-      margin-top: 12px;
-      border: 2px solid #ddd;
-    }
+.upi-id {
+font-size:18px;
+font-weight:600;
+color:#b22222;
+}
 
-    .upi-id {
-      font-size: 18px;
-      font-weight: 600;
-      color: #b22222;
-    }
+footer {
+background:#f1f1f1;
+text-align:center;
+padding:15px;
+font-size:14px;
+color:#555;
+}
 
-    footer {
-      background: #f1f1f1;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    @media (max-width: 600px) {
-      .stats {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+@media (max-width:600px){
+.stats{grid-template-columns:1fr;}
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
 
-  <header>
-    <h1>Special Dawat Chunari 2026</h1>
-    <p>Season 1</p>
-    <p><strong>📅 Date:</strong> 20 January 2026 (Tuesday)</p>
-    <p><strong>📍 Venue:</strong> DAAG</p>
-  </header>
+<header>
+<h1 id="eventName">Special Dawat Chunari 2026</h1>
+<p id="seasonText">Season 1</p>
+<p id="dateText"><strong>📅 Date:</strong> 20 January 2026 (Tuesday)</p>
+<p><strong>📍 Venue:</strong> 
+<a id="venueLink" href="#" target="_blank" style="color:white;text-decoration:underline;">DAAG</a>
+</p>
+</header>
 
-  <div class="banner"></div>
+<div class="banner" id="banner"></div>
 
-  <div class="section">
+<div class="section">
 
-    <div class="highlight">
-      <strong>Entry Fee:</strong> ₹200 per person  
-      <br>Pay online via UPI or pay at the venue.
-    </div>
+<div class="highlight" id="feeText">
+<strong>Entry Fee:</strong> ₹200 per person  
+<br>Pay online via UPI or pay at the venue.
+</div>
 
-    <div class="countdown-box" id="countdown">
-      Loading countdown...
-    </div>
+<div class="countdown-box" id="countdown">
+Loading countdown...
+</div>
 
-    <div class="stats">
-      <div class="stat">
-        Members
-        <div id="totalMembers">0</div>
-      </div>
-      <div class="stat">
-        Fee
-        <div>₹200</div>
-      </div>
-      <div class="stat">
-        Total
-        <div>₹<span id="totalAmount">0</span></div>
-      </div>
-    </div>
+<div class="stats">
+<div class="stat">
+Members
+<div id="totalMembers">0</div>
+</div>
 
-    <h3>Paid Members</h3>
+<div class="stat">
+Fee
+<div id="feeStat">₹200</div>
+</div>
 
-    <!-- ADD NAMES BELOW -->
-    <ul id="memberList">
-      <li>Md Atiquz Zaman</li>
-    </ul>
+<div class="stat">
+Total
+<div>₹<span id="totalAmount">0</span></div>
+</div>
+</div>
 
-    <div class="upi-box">
-      <!--<h3>💳 Pay Online (UPI)</h3>-->
-      <p class="upi-id">6026557964@omni</p>
-      <p>Scan the QR code or pay ₹200 via UPI ID</p>
+<h3>Paid Members</h3>
 
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=6026557964@omni&pn=SpecialDawat&am=200" alt="UPI QR Code">
-    </div>
+<ul id="memberList">
+<li>Md Atiquz Zaman</li>
+</ul>
 
-  </div>
+<div class="upi-box">
+<p class="upi-id" id="upiID">6026557964@omni</p>
+<p id="upiText">Scan the QR code or pay ₹200 via UPI ID</p>
 
-  <footer>
-    © 2026 Special Dawat | Designed for easy payments & tracking
-  </footer>
+<img id="upiQR" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=6026557964@omni&pn=SpecialDawat&am=200">
+</div>
+
+</div>
+
+<footer id="footerText">
+© 2026 Special Dawat | Designed for easy payments & tracking
+</footer>
 
 </div>
 
 <script>
-  // Member count & total
-  const fee = 200;
-  const members = document.querySelectorAll("#memberList li").length;
-  document.getElementById("totalMembers").innerText = members;
-  document.getElementById("totalAmount").innerText = members * fee;
 
-  // Countdown
-  const eventDate = new Date("January 20, 2026 16:00:00").getTime();
+/* =========================
+CONFIG — EDIT ONLY HERE
+========================= */
 
-  const timer = setInterval(() => {
-    const now = new Date().getTime();
-    const diff = eventDate - now;
+const CONFIG = {
 
-    if (diff <= 0) {
-      document.getElementById("countdown").innerText = "🎉 Event Started!";
-      clearInterval(timer);
-      return;
-    }
+eventName:"Special Dawat Chunari 2026",
+season:"Season 1",
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+dateText:"20 January 2026 (Tuesday)",
+countdownDate:"January 20, 2026 16:00:00",
 
-    document.getElementById("countdown").innerText =
-      `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left to pay`;
-  }, 1000);
+venue:"DAAG",
+mapsQuery:"DAAG Guwahati",
+
+fee:200,
+
+upi:"6026557964@omni",
+upiName:"SpecialDawat",
+
+bannerImage:"https://rs-menus-api.roocdn.com/images/1c638d4c-3491-4ee4-8b46-0c25da172eeb/image.jpeg"
+
+};
+
+/* =========================
+APPLY VARIABLES
+========================= */
+
+document.title = CONFIG.eventName + " – Payment & Members";
+
+document.getElementById("eventName").innerText = CONFIG.eventName;
+
+document.getElementById("seasonText").innerText = CONFIG.season;
+
+document.getElementById("dateText").innerHTML =
+"<strong>📅 Date:</strong> " + CONFIG.dateText;
+
+document.getElementById("venueLink").innerText = CONFIG.venue;
+
+document.getElementById("venueLink").href =
+"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(CONFIG.mapsQuery);
+
+document.getElementById("banner").style.background =
+"url('"+CONFIG.bannerImage+"') center/cover no-repeat";
+
+document.getElementById("feeText").innerHTML =
+"<strong>Entry Fee:</strong> ₹"+CONFIG.fee+" per person<br>Pay online via UPI or pay at the venue.";
+
+document.getElementById("feeStat").innerText="₹"+CONFIG.fee;
+
+document.getElementById("upiID").innerText = CONFIG.upi;
+
+document.getElementById("upiText").innerText =
+"Scan the QR code or pay ₹"+CONFIG.fee+" via UPI ID";
+
+document.getElementById("upiQR").src =
+"https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa="
++CONFIG.upi+"&pn="+CONFIG.upiName+"&am="+CONFIG.fee;
+
+document.getElementById("footerText").innerText =
+"© 2026 "+CONFIG.eventName+" | Designed for ATI Developers";
+
+/* =========================
+MEMBER COUNT
+========================= */
+
+const members = document.querySelectorAll("#memberList li").length;
+
+document.getElementById("totalMembers").innerText = members;
+
+document.getElementById("totalAmount").innerText = members * CONFIG.fee;
+
+/* =========================
+COUNTDOWN
+========================= */
+
+const eventDate = new Date(CONFIG.countdownDate).getTime();
+
+const timer = setInterval(()=>{
+
+const now = new Date().getTime();
+
+const diff = eventDate - now;
+
+if(diff<=0){
+
+document.getElementById("countdown").innerText="🎉 Event Started!";
+
+clearInterval(timer);
+
+return;
+
+}
+
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff/(1000*60*60))%24);
+const minutes=Math.floor((diff/(1000*60))%60);
+const seconds=Math.floor((diff/1000)%60);
+
+document.getElementById("countdown").innerText=
+`⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left to pay`;
+
+},1000);
+
 </script>
 
 </body>
