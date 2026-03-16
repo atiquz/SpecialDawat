@@ -277,8 +277,7 @@ document.getElementById("dateText").innerHTML =
 
 document.getElementById("venueLink").innerText = CONFIG.venue;
 
-document.getElementById("venueLink").href =
-"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(CONFIG.mapsQuery);
+document.getElementById("venueLink").href = CONFIG.mapsQuery;
 
 document.getElementById("banner").style.background =
 "url('"+CONFIG.bannerImage+"') center/cover no-repeat";
